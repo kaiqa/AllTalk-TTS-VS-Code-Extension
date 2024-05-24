@@ -1,0 +1,68 @@
+{
+  "name": "alltalktts",
+  "displayName": "alltalkTTS",
+  "description": "Reads text",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:alltalktts.playTTS"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "alltalktts.playTTS",
+        "title": "Play TTS Audio"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "alltalktts.playTTS",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Alltalk TTS",
+      "properties": {
+        "alltalktts.ip": {
+          "type": "string",
+          "default": "127.0.0.1",
+          "description": "The IP address of the TTS server"
+        },
+        "alltalktts.port": {
+          "type": "number",
+          "default": 7851,
+          "description": "The port of the TTS server"
+        },
+        "alltalktts.voice": {
+          "type": "string",
+          "default": "thompson.wav",
+          "description": "The voice file to use"
+        },
+        "alltalktts.language": {
+          "type": "string",
+          "default": "en",
+          "description": "The language for TTS"
+        },
+        "alltalktts.temperature": {
+          "type": "number",
+          "default": 1.0,
+          "description": "The temperature value for TTS"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "open": "^8.4.0"
+  }
+}

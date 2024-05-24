@@ -1,6 +1,7 @@
 # VS Code directories
 .vscode/
 .vsconfig
+.vscode-test
 
 # Windows shortcuts
 *.lnk
@@ -33,7 +34,3 @@ node_modules/
 # cache directory
 .temp
 .cache
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
-
